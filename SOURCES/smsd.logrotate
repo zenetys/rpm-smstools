@@ -1,0 +1,8 @@
+/var/log/smsd/smsd.log {
+    notifempty
+	missingok
+	create 640 smsd smsd
+	postrotate
+        /usr/bin/systemctl try-restart smsd.service || true
+	endscript
+}
